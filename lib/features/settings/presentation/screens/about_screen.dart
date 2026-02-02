@@ -170,7 +170,7 @@ class AboutScreen extends ConsumerWidget {
                           context,
                           icon: Icons.mail_outline_rounded,
                           title: isRussian ? 'Связаться с нами' : 'Contact Us',
-                          onTap: () => _launchUrl('mailto:support@retrovibe.app'),
+                          onTap: () => _launchUrl('mailto:white.scan@proton.me'),
                         ),
 
                         const SizedBox(height: AppSpacing.xxl),
