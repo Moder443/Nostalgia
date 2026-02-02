@@ -296,8 +296,15 @@ class AboutScreen extends ConsumerWidget {
 
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    try {
+      await launchUrl(
+        uri,
+        mode: url.startsWith('mailto:')
+            ? LaunchMode.externalApplication
+            : LaunchMode.externalApplication,
+      );
+    } catch (e) {
+      debugPrint('Could not launch $url: $e');
     }
   }
 }
